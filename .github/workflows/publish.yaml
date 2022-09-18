@@ -1,0 +1,56 @@
+# Name of workflow
+name: Publish on NPM and GitHub
+# When workflow is triggered
+ env:
+    CI: true
+    NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+    GITHUB_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
+on:
+  pull_request:
+        branches:
+            - main
+  tags:
+    - "!*"
+# Jobs to carry out
+jobs:
+    publish:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [16.x]
+        steps:
+            # Get code from repo
+            - name: Checkout code
+              uses: actions/checkout@v2
+            # Install NodeJS
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v2
+              with:
+                  node-version: ${{ matrix.node-version }}
+                  registry-url: 'https://registry.npmjs.org'
+            # Run yarn install
+            - name: Install yarn
+              run: |
+                  npm install -g yarn
+            - name: Install dependencies
+              run: yarn
+            - name: Build @rolling-records packages
+              run: yarn run build
+             # Publish to npm if this version is not published
+            - name: Publish package on NPM 📦
+              run: |
+                npx can-npm-publish --verbose && yarn run publish || echo "Does not publish"
+              env:
+                NODE_AUTH_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
+            # Push tag to GitHub if package.json version's tag is not tagged
+            - name: package-version
+              run: node -p -e '`PACKAGE_VERSION=${require("./package.json").version}`' >> $GITHUB_ENV
+            - name: package-version-to-git-tag
+              uses: pkgdeps/git-tag-action@v2
+              with:
+                github_token: ${{ secrets.PUBLISH_TOKEN }}
+                github_repo: ${{ github.repository }}
+                version: ${{ env.PACKAGE_VERSION }}
+                git_commit_sha: ${{ github.sha }}
+                git_tag_prefix: "v"
+     
