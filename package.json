@@ -1,0 +1,37 @@
+{
+    "name": "@rolling-records/klarna-checkout-node",
+    "version": "1.0.0",
+    "private": "true",
+    "main": "dist/commonjs/index.js",
+    "types": "dist/esm/index.d.ts",
+    "module": "dist/esm/index.js",
+    "scripts": {
+        "start": "tsc --watch",
+        "build": "rimraf ./dist && tsc -p ./tsconfig.json && tsc -p ./tsconfig.commonjs.json",
+        "test:coverage": "jest --coverage --colors --detectOpenHandles --forceExit",
+        "test": "jest --colors --detectOpenHandles --runInBand --forceExit",
+        "test:watch": "jest --coverage --colors --watchAll"
+    },
+    "author": {
+        "email": "devdesignrt@gmail.com",
+        "name": "DevDesing",
+        "url": "https://www.devdesign.fi"
+    },
+    "engines": {
+        "node": ">=16.*",
+        "yarn": ">=1.*"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "axios": "0.27.2",
+        "rimraf": "3.0.2",
+        "uuid": "8.3.2"
+    },
+    "devDependencies": {
+        "@types/jest": "27.4.1",
+        "@types/uuid": "8.3.4",
+        "copyfiles": "2.4.1",
+        "jest": "27.5.1",
+        "ts-jest": "27.1.4"
+    }
+}
