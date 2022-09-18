@@ -84,7 +84,7 @@ export interface IKlarnaOrder {
 }
 
 export interface ICreatedKlarnaOrder {
-    order_id: '582480ee-841d-6f42-aa27-30e56ae98a6b';
+    order_id: string;
     status: 'checkout_incomplete';
     purchase_country: PURCHASE_COUNTRY;
     purchase_currency: PURCHASE_CURRENCY;
@@ -95,10 +95,10 @@ export interface ICreatedKlarnaOrder {
     order_tax_amount: number;
     order_lines: IOrderItem[];
     merchant_urls: {
-        terms: 'http://localhost:8080/kayttoehdot';
-        checkout: 'http://localhost:8080/ostoskori/kassa';
-        confirmation: 'http://localhost:8080/ostoskori/vahvistus';
-        push: 'http://localhost:8080/ostoskori/vahvistus';
+        terms: string;
+        checkout: string;
+        confirmation: string;
+        push: string;
     };
     html_snippet: string;
     started_at: Date;
