@@ -1,7 +1,6 @@
 # Klarna checkout Node
 
-<img src="./resources/klarna_logo.png" alt="Klarna Checkout logo" with="100px" height="100px" />
-<img src="./resources/node-js-new.png" alt="Node.js logo" width="100px" height="107px" />
+<img src="https://res.cloudinary.com/halkoliiteri/image/upload/v1663523265/rollingrecords/klarna_logo_wonnpy.png" alt="Klarna Checkout logo" with="100px" height="100px" /><img src="https://res.cloudinary.com/halkoliiteri/image/upload/v1663523265/rollingrecords/node-js-new_izpsyb.png" alt="Node.js logo" width="100px" height="107px" />
 
 Promise based client for **node.js**, for interaction with
 [Klarna checkout API V3](https://docs.klarna.com/klarna-checkout/api/#tag/order).
