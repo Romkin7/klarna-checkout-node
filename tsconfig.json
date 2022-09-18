@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "module": "esNext",
+        "downlevelIteration": true,
+        "noImplicitAny": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "allowSyntheticDefaultImports": true,
+        "target": "esNext",
+        "declaration": true,
+        "sourceMap": true,
+        "outDir": "./dist/esm",
+        "rootDir": "./src",
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "removeComments": true,
+        "resolveJsonModule": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "types": ["jest", "node"],
+        "paths": {
+            "*": ["./node_modules/@types/*"]
+        }
+    },
+    "exclude": ["./src/tests", "./src/__mocks__", "./dist"]
+}

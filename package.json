@@ -11,7 +11,9 @@
         "test:coverage": "jest --coverage --colors --detectOpenHandles --forceExit",
         "test": "jest --colors --detectOpenHandles --runInBand --forceExit",
         "test:watch": "jest --coverage --colors --watchAll",
-        "lint": "eslint src/**/*.ts --ext .ts{x} && yarn run test"
+        "lint": "yarn run prettier:test && eslint src/**/*.ts --ext .ts{x}",
+        "prettier:test": "prettier --check \"src/**/*.ts*\"",
+        "prettier:fix": "prettier --write \"src/**/*.ts*\""
     },
     "author": {
         "email": "devdesignrt@gmail.com",
@@ -36,15 +38,13 @@
         "eslint-plugin-import": "2.26.0",
         "eslint-plugin-node": "11.1.0",
         "eslint-plugin-prettier": "4.0.0",
-        "husky": "8.0.1",
         "jest": "27.5.1",
         "prettier": "2.6.2",
-        "nodemon": "2.0.20",
         "ts-jest": "27.1.4",
         "ts-node": "10.7.0",
         "typescript": "4.7.4"
     },
-     "lint-staged": {
+    "lint-staged": {
         "*.{tsx,ts,js,scss}": [
             "prettier --write",
             "git add"
