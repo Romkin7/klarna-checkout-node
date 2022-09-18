@@ -1,5 +1,5 @@
 # Name of workflow
-name: Main workflow
+name: Release workflow
 
 # When workflow is triggered
 on:
@@ -30,15 +30,8 @@ jobs:
             # Run rush install
             - name: Install yarn
               run: |
-                npm install -g yarn
+                  npm install -g yarn
             - name: Install dependencies
               run: yarn
-            - name: Fix code style
-              run: yarn run prettier:fix
-            # Run unit tests for all packages
-            - name: Run lint
-              run: yarn run lint
-            # Run unit tests for all packages
-            - name: Run tests
-              run: yarn run test
-              
+            - name: Build @rolling-records packages
+              run: yarn run build
