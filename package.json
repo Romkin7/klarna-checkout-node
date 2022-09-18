@@ -1,5 +1,5 @@
 {
-    "name": "@rolling-records/klarna-checkout-node",
+    "name": "klarna-checkout-node",
     "version": "1.0.0",
     "private": "true",
     "main": "dist/commonjs/index.js",
