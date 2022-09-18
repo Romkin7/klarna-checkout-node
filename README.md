@@ -1,4 +1,4 @@
-# Klarna checkout Node
+# Klarna checkout SDK
 
 <img src="https://res.cloudinary.com/halkoliiteri/image/upload/v1663523265/rollingrecords/klarna_logo_wonnpy.png" alt="Klarna Checkout logo" with="100px" height="100px" /><img src="https://res.cloudinary.com/halkoliiteri/image/upload/v1663523265/rollingrecords/node-js-new_izpsyb.png" alt="Node.js logo" width="100px" height="107px" />
 
@@ -13,23 +13,23 @@ Sign up to playground Klarna
 
 ## &#128190; Install
 
-You can install `klarna-checkout-node` with npm, yarn or pnpm.
+You can install `klarna-checkout-sdk` with npm, yarn or pnpm.
 
 ### Using npm:
 
-`npm install klarna-checkout-node --save`
+`npm install klarna-checkout-sdk --save`
 
 ### Using yarn:
 
-`yarn add klarna-checkout-node`
+`yarn add klarna-checkout-sdk`
 
 ### Using pnpm:
 
-`pnpm add klarna-checkout-node`
+`pnpm add klarna-checkout-sdk`
 
 ## Usage
 
-`klarna-checkout-node` is shipped with full support for TypeScript, ESM Modules
+`klarna-checkout-sdk` is shipped with full support for TypeScript, ESM Modules
 and Commonjs. This means that package can be used with `import` &amp; `export`
 syntax and `module.exports` &amp; `require` syntax.
 
@@ -38,7 +38,7 @@ syntax and `module.exports` &amp; `require` syntax.
 **Example code:**
 
 ```TypeScript
-import { initialize, createOrder, getOrder, IKlarnaSDK, IKlarnaOrder } from 'klarna-checkout-node';
+import { initialize, createOrder, getOrder, IKlarnaSDK, IKlarnaOrder } from 'klarna-checkout-sdk';
 
 /** initialize klarna SDK, with your credentials, that you can get from playground merchant portal settings page. */
 const klarnaSDK: IKlarnaSDK = initialize(
@@ -110,7 +110,7 @@ const order: IKlarnaOrder = {
 **Example code:**
 
 ```js
-const { initialize, createOrder, getOrder } = require('klarna-checkout-node');
+const { initialize, createOrder, getOrder } = require('klarna-checkout-sdk');
 
 /** initialize klarna SDK, with your credentials, that you can get from playground merchant portal settings page. */
 const klarnaSDK = initialize({

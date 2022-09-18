@@ -1,6 +1,6 @@
 {
-    "name": "klarna-checkout-node",
-    "version": "1.0.2",
+    "name": "klarna-checkout-sdk",
+    "version": "1.0.0",
     "main": "dist/commonjs/index.js",
     "types": "dist/esm/@types/types.d.ts",
     "module": "dist/esm/index.js",
