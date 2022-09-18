@@ -1,4 +1,2 @@
-src/tests
-src/__mocks__
 node_modules
 **/*.js

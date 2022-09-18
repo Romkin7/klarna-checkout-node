@@ -19,5 +19,5 @@ module.exports = {
             },
         ],
     },
-    ignorePatterns: ['node_modules', 'dist', 'src/tests', 'src/__mocks__'],
+    ignorePatterns: ['node_modules', 'dist'],
 };
