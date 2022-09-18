@@ -61,7 +61,7 @@ const order: IKlarnaOrder = {
                     total_amount: 2,
                     tax_rate: 2400,
                     image_uri:
-                        'https://res.cloudinary.com/romantuomisto-com/image/upload/v1662557938/dpcd0a3jqbbozy1ygmxt.jpg',
+                        'https://res.cloudinary.com/image/upload/v1662557938/dpcd0a3jqbbozy1ygmxt.jpg',
                     uri: 'https://rollingrecords.fi/lp:t/test-id-one',
                     type: 'physical',
                 },
@@ -131,7 +131,7 @@ const order = {
             total_amount: 2,
             tax_rate: 2400,
             image_uri:
-                'https://res.cloudinary.com/romantuomisto-com/image/upload/v1662557938/dpcd0a3jqbbozy1ygmxt.jpg',
+                'https://res.cloudinary.com/image/upload/v1662557938/dpcd0a3jqbbozy1ygmxt.jpg',
             uri: 'https://rollingrecords.fi/lp:t/test-id-one',
             type: 'physical',
         },
