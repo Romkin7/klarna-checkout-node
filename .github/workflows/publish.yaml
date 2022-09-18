@@ -7,10 +7,9 @@ name: Publish on NPM and GitHub
     GITHUB_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
 on:
   pull_request:
-        branches:
-            - main
-  tags:
-    - "!*"
+    types: ['closed']
+    branches:
+      - main
 # Jobs to carry out
 jobs:
     publish:
