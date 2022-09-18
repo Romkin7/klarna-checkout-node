@@ -3,7 +3,7 @@
  *
  * @author Roman Tuomisto
  * Support email: devdesignrt@gmail.com
- * @version 1.0.0
+ * @version 1.0.1
  */
 import { initialize } from './initialize';
 import { createOrder } from './createOrder';
