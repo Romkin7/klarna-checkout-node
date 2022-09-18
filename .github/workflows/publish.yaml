@@ -1,3 +1,4 @@
+# name of the workflow
 name: Publish on NPM and GitHub
 # When workflow is triggered
 on:
