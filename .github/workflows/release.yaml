@@ -1,33 +1,30 @@
 # Name of workflow
-name: Release workflow
-
+name: Release on NPM
 # When workflow is triggered
 on:
-    push:
-        branches:
-            - main
-    pull_request:
-        branches:
-            - main
+  release:
+    types: [created]
 # Jobs to carry out
 jobs:
-    test:
+    build:
         runs-on: ubuntu-latest
         strategy:
             matrix:
                 node-version: [16.x]
         env:
             CI: true
+            NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         steps:
             # Get code from repo
             - name: Checkout code
-              uses: actions/checkout@v1
+              uses: actions/checkout@v2
             # Install NodeJS
             - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v1
+              uses: actions/setup-node@v2
               with:
                   node-version: ${{ matrix.node-version }}
-            # Run rush install
+                  registry-url: 'https://registry.npmjs.org'
+            # Run yarn install
             - name: Install yarn
               run: |
                   npm install -g yarn
@@ -35,3 +32,5 @@ jobs:
               run: yarn
             - name: Build @rolling-records packages
               run: yarn run build
+            - name: Publish package on NPM 📦
+              run: npm publish
