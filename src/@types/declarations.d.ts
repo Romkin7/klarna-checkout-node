@@ -9,3 +9,7 @@ declare function getOrder(
     klarnaSDK: IInit,
     orderId: string,
 ): ICreatedKlarnaOrder;
+declare function updateOrder(
+    klarnaSDK: IKlarnaSDK,
+    klarnaOrder: ICreatedKlarnaOrder,
+): ICreatedKlarnaOrder;

@@ -8,5 +8,6 @@
 import { initialize } from './initialize';
 import { createOrder } from './createOrder';
 import { getOrder } from './getOrder';
+import { updateOrder } from './updateOrder';
 
-export { initialize, createOrder, getOrder };
+export { initialize, createOrder, getOrder, updateOrder };
