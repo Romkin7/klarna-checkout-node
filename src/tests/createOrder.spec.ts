@@ -33,7 +33,7 @@ describe('Tests for createOrder function', () => {
                     tax_rate: 2400,
                     image_uri:
                         'https://res.cloudinary.com/romantuomisto-com/image/upload/v1662557938/dpcd0a3jqbbozy1ygmxt.jpg',
-                    uri: 'https://rollingrecords.fi/lp:t/test-id-one',
+                    uri: 'https://teststore.com/lp:t/test-id-one',
                     type: 'physical',
                 },
             ],
@@ -172,7 +172,7 @@ describe('Tests for createOrder function', () => {
                         total_tax_amount: 0.39,
                         type: 'physical',
                         unit_price: 2,
-                        uri: 'https://rollingrecords.fi/lp:t/test-id-one',
+                        uri: 'https://teststore.com/lp:t/test-id-one',
                     },
                 ],
                 order_tax_amount: 0.39,
