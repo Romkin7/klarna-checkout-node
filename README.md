@@ -62,7 +62,7 @@ const order: IKlarnaOrder = {
                     tax_rate: 2400,
                     image_uri:
                         'https://res.cloudinary.com/image/upload/v1662557938/dpcd0a3jqbbozy1ygmxt.jpg',
-                    uri: 'https://rollingrecords.fi/lp:t/test-id-one',
+                    uri: 'https://teststore.com/lp:t/test-id-one',
                     type: 'physical',
                 },
             ],
@@ -134,7 +134,7 @@ const order = {
             tax_rate: 2400,
             image_uri:
                 'https://res.cloudinary.com/image/upload/v1662557938/dpcd0a3jqbbozy1ygmxt.jpg',
-            uri: 'https://rollingrecords.fi/lp:t/test-id-one',
+            uri: 'https://teststore.com/lp:t/test-id-one',
             type: 'physical',
         },
     ],
