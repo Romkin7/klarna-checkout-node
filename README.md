@@ -5,7 +5,7 @@
 Promise based client for **node.js**, for interaction with
 [Klarna checkout API V3](https://docs.klarna.com/klarna-checkout/api/#tag/order).
 
-## Setting up playground Klarna Merchant portal
+## Setting up Klarna Merchant playground portal
 
 Sign up to playground Klarna
 [Merchant portal](https://auth.playground.eu.portal.klarna.com/auth/realms/merchants/protocol/openid-connect/auth?client_id=merchant-portal&redirect_uri=https%3A%2F%2Fportal.playground.klarna.com%2Forders&state=8a193f2a-d3fb-471b-ae40-88b215da2ebe&response_mode=fragment&response_type=code&scope=openid&nonce=d91dd7a8-2157-4dd0-87a0-aeb07ed166b0&code_challenge=kWT--nIE4eyY97yqmkLK9bIew-Gm1pMdD94hLRTzqZc&code_challenge_method=S256)
@@ -38,7 +38,7 @@ syntax and `module.exports` &amp; `require` syntax.
 **Example code:**
 
 ```TypeScript
-import { initialize, createOrder, getOrder, IKlarnaSDK, IKlarnaOrder } from 'klarna-checkout-sdk';
+import { initialize, createOrder, getOrder, updateOrder, IKlarnaSDK, IKlarnaOrder } from 'klarna-checkout-sdk';
 
 /** initialize klarna SDK, with your credentials, that you can get from playground merchant portal settings page. */
 const klarnaSDK: IKlarnaSDK = initialize(
@@ -100,8 +100,10 @@ const order: IKlarnaOrder = {
         };
         /** Create order and render payment info in the client from html_snippet property. */
         const newKlarnaOrder = await createOrder(klarnaSDK, order);
-        /** Get order and render successfull order in the client from html_snippet property. */
+        /** Get order and render checkout snippet. */
         const klarnaOrder = await getOrder(klarnaSDK, newKlarnaOrder.order_id);
+        /** Update order and render checkout snippet. */
+        const updatedKlarnaOrder = await updateOrder(klarnaSDK, klarnaOrder);
 
 ```
 
@@ -110,7 +112,7 @@ const order: IKlarnaOrder = {
 **Example code:**
 
 ```js
-const { initialize, createOrder, getOrder } = require('klarna-checkout-sdk');
+const { initialize, createOrder, getOrder, updateOrder } = require('klarna-checkout-sdk');
 
 /** initialize klarna SDK, with your credentials, that you can get from playground merchant portal settings page. */
 const klarnaSDK = initialize({
@@ -170,6 +172,8 @@ const order = {
 };
 /** Create order and render payment info in the client from html_snippet property. */
 const newKlarnaOrder = await createOrder(klarnaSDK, order);
-/** Get order and render successfull order in the client from html_snippet property. */
+/** Get order and render checkout snippet. */
 const klarnaOrder = await getOrder(klarnaSDK, newKlarnaOrder.order_id);
+/** Update order and render checkout snippet. */
+const updatedKlarnaOrder = await updateOrder(klarnaSDK, klarnaOrder);
 ```
