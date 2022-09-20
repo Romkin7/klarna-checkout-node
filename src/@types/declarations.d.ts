@@ -13,3 +13,7 @@ declare function updateOrder(
     klarnaSDK: IKlarnaSDK,
     klarnaOrder: ICreatedKlarnaOrder,
 ): ICreatedKlarnaOrder;
+declare function markAnOrderAsAborted(
+    klarnaSDK: IKlarnaSDK,
+    orderId: string,
+): ICreatedKlarnaOrder;

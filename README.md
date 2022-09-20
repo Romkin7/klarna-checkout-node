@@ -38,7 +38,7 @@ syntax and `module.exports` &amp; `require` syntax.
 **Example code:**
 
 ```TypeScript
-import { initialize, createOrder, getOrder, updateOrder, IKlarnaSDK, IKlarnaOrder } from 'klarna-checkout-sdk';
+import { initialize, createOrder, getOrder, updateOrder, markAnOrderAsAborted, IKlarnaSDK, IKlarnaOrder } from 'klarna-checkout-sdk';
 
 /** initialize klarna SDK, with your credentials, that you can get from playground merchant portal settings page. */
 const klarnaSDK: IKlarnaSDK = initialize(
@@ -104,7 +104,8 @@ const order: IKlarnaOrder = {
         const klarnaOrder = await getOrder(klarnaSDK, newKlarnaOrder.order_id);
         /** Update order and render checkout snippet. */
         const updatedKlarnaOrder = await updateOrder(klarnaSDK, klarnaOrder);
-
+        /** Mark an order as aborted and render confirmation snippet. */
+        const abortedOrder = await markAnOrderAsAborted(klarnaSDK, klarnaOrder.order_id);
 ```
 
 ### Usage with Commonjs
@@ -112,7 +113,13 @@ const order: IKlarnaOrder = {
 **Example code:**
 
 ```js
-const { initialize, createOrder, getOrder, updateOrder } = require('klarna-checkout-sdk');
+const {
+    initialize,
+    createOrder,
+    getOrder,
+    updateOrder,
+    markAnOrderAsAborted,
+} = require('klarna-checkout-sdk');
 
 /** initialize klarna SDK, with your credentials, that you can get from playground merchant portal settings page. */
 const klarnaSDK = initialize({
@@ -176,4 +183,9 @@ const newKlarnaOrder = await createOrder(klarnaSDK, order);
 const klarnaOrder = await getOrder(klarnaSDK, newKlarnaOrder.order_id);
 /** Update order and render checkout snippet. */
 const updatedKlarnaOrder = await updateOrder(klarnaSDK, klarnaOrder);
+/** Mark an order as aborted and render confirmation snippet. */
+const abortedOrder = await markAnOrderAsAborted(
+    klarnaSDK,
+    klarnaOrder.order_id,
+);
 ```
