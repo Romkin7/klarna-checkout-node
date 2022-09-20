@@ -1,7 +1,13 @@
 import { LOCALE } from './locales';
 import { PURCHASE_COUNTRY } from './purchaseCountries';
 import { PURCHASE_CURRENCY } from './purchaseCurrencies';
-import { createOrder, getOrder, initialize, updateOrder } from './declarations';
+import {
+    createOrder,
+    getOrder,
+    initialize,
+    updateOrder,
+    markAnOrderAsAborted,
+} from './declarations';
 
 export type VatUnits = 2400 | 1000;
 export interface IKlarnaUrls {
@@ -116,6 +122,7 @@ export {
     initialize,
     createOrder,
     updateOrder,
+    markAnOrderAsAborted,
     getOrder,
     LOCALE,
     PURCHASE_COUNTRY,
