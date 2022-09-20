@@ -4,16 +4,16 @@ declare function initialize(init: IInit): IKlarnaSDK;
 declare function createOrder(
     klarnaSDK: IKlarnaSDK,
     order: IKlarnaOrder,
-): ICreatedKlarnaOrder;
+): Promise<ICreatedKlarnaOrder>;
 declare function getOrder(
-    klarnaSDK: IInit,
+    klarnaSDK: IKlarnaSDK,
     orderId: string,
-): ICreatedKlarnaOrder;
+): Promise<ICreatedKlarnaOrder>;
 declare function updateOrder(
     klarnaSDK: IKlarnaSDK,
     klarnaOrder: ICreatedKlarnaOrder,
-): ICreatedKlarnaOrder;
+): Promise<ICreatedKlarnaOrder>;
 declare function markAnOrderAsAborted(
     klarnaSDK: IKlarnaSDK,
     orderId: string,
-): ICreatedKlarnaOrder;
+): Promise<ICreatedKlarnaOrder>;
