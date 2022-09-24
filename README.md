@@ -108,6 +108,75 @@ const order: IKlarnaOrder = {
         const abortedOrder = await markAnOrderAsAborted(klarnaSDK, klarnaOrder.order_id);
 ```
 
+#### Example with Express, Node.js & TypeScript
+**klarna.ts**
+```TypeScript
+import { IKlarnaSDK, initialize } from 'klarna-checkout-sdk';
+
+const klarna = (): IKlarnaSDK => {
+    return initialize({
+        eid: process.env.EID,
+        secret: process.env.KLARNA_SECRET,
+        live: process.env.NODE_ENV === 'production' ? true : false,
+    });
+};
+
+export default klarna;
+```
+**routes/klarna.routes.ts**
+```TypeScript
+import { Router, Request, Response } from 'express';
+import klarna from '../klarna';
+import { createOrder, getOrder, IKlarnaOrder } from 'klarna-checkout-sdk';
+
+const router = Router();
+
+router.post(
+    '/klarna/create-order',
+    async (request: Request, response: Response) => {
+        try {
+            const klarnaSDK = klarna();
+            const klarnaOrder = request.body as IKlarnaOrder;
+            const newOder = await createOrder(klarnaSDK, klarnaOrder);
+            return response.status(201).json({ order: newOder });
+        } catch (error) {
+            return response
+                .status(500)
+                .json({ message: 'some error.' });
+        }
+    },
+);
+router.post('/klarna/push', async (request: Request, response: Response) => {
+    try {
+        const orderId = request.query.klarna_order_id as unknown as string;
+        const klarnaSDK = klarna();
+        const klarnaOrder = await getOrder(klarnaSDK, orderId);
+        return response.status(201).json({ order: klarnaOrder });
+    } catch (error) {
+         return response
+                .status(500)
+                .json({ message: 'some error.' });
+    }
+});
+router.get(
+    '/klarna/get-order/:orderId',
+    async (request: Request, response: Response) => {
+        try {
+            const orderId = request.params.orderId;
+            const klarnaSDK = klarna();
+            const klarnaOrder = await getOrder(klarnaSDK, orderId);
+            return response.status(201).json({ order: klarnaOrder });
+        } catch (error) {
+             return response
+                .status(500)
+                .json({ message: 'some error.' });
+        }
+    },
+);
+
+export default router;
+```
+
 ### Usage with Commonjs
 
 **Example code:**

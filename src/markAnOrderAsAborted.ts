@@ -12,7 +12,7 @@ export async function markAnOrderAsAborted(
     orderId: string,
 ): Promise<ICreatedKlarnaOrder> {
     const { klarnaUri, headers } = klarnaSDK;
-    const { data } = await axios.post(`${klarnaUri}/${orderId}`, null, {
+    const { data } = await axios.post(`${klarnaUri}/${orderId}/abort`, null, {
         headers: headers as unknown as AxiosRequestHeaders,
     });
     return data.order;
