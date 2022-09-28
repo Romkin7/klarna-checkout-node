@@ -3,7 +3,7 @@
  *  klarna-checkout-sdk
  * @author Roman Tuomisto
  * Support email: devdesignrt@gmail.com
- * @version 1.2.1
+ * @version 1.2.2
  */
 import { initialize } from './initialize';
 import { createOrder } from './createOrder';
