@@ -17,3 +17,5 @@ declare function markAnOrderAsAborted(
     klarnaSDK: IKlarnaSDK,
     orderId: string,
 ): Promise<ICreatedKlarnaOrder>;
+
+export { initialize, createOrder, getOrder, updateOrder, markAnOrderAsAborted };
