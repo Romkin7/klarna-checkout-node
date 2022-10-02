@@ -1,9 +1,13 @@
 {
     "name": "klarna-checkout-sdk",
-    "version": "1.2.2",
+    "version": "1.2.3",
     "main": "dist/commonjs/index.js",
     "types": "dist/esm/@types/types.d.ts",
     "module": "dist/esm/index.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Romkin7/klarna-checkout-sdk"
+    },
     "scripts": {
         "start": "tsc --watch",
         "build": "rimraf ./dist && tsc -p ./tsconfig.json && tsc -p ./tsconfig.commonjs.json",
