@@ -1,5 +1,7 @@
 # Klarna checkout SDK
 
+Klarna checkout `klarna-checkout-sdk` npm package for Node.js.
+
 <img src="https://res.cloudinary.com/halkoliiteri/image/upload/v1663523265/rollingrecords/klarna_logo_wonnpy.png" alt="Klarna Checkout logo" with="100px" height="100px" /><img src="https://res.cloudinary.com/halkoliiteri/image/upload/v1663523265/rollingrecords/node-js-new_izpsyb.png" alt="Node.js logo" width="100px" height="107px" />
 
 Promise based client for **node.js**, for interaction with
@@ -109,7 +111,9 @@ const order: IKlarnaOrder = {
 ```
 
 #### Example with Express, Node.js & TypeScript
+
 **klarna.ts**
+
 ```TypeScript
 import { IKlarnaSDK, initialize } from 'klarna-checkout-sdk';
 
@@ -123,7 +127,9 @@ const klarna = (): IKlarnaSDK => {
 
 export default klarna;
 ```
+
 **routes/klarna.routes.ts**
+
 ```TypeScript
 import { Router, Request, Response } from 'express';
 import klarna from '../klarna';
