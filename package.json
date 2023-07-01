@@ -1,16 +1,17 @@
 {
     "name": "klarna-checkout-sdk",
-    "version": "1.2.3",
-    "main": "dist/commonjs/index.js",
-    "types": "dist/esm/@types/types.d.ts",
-    "module": "dist/esm/index.js",
+    "version": "1.2.4",
+    "main": "commonjs/index.js",
+    "types": "esm/@types/types.d.ts",
+    "module": "esm/index.js",
     "repository": {
         "type": "git",
         "url": "https://github.com/Romkin7/klarna-checkout-sdk"
     },
     "scripts": {
         "start": "tsc --watch",
-        "build": "rimraf ./dist && tsc -p ./tsconfig.json && tsc -p ./tsconfig.commonjs.json",
+        "build": "rimraf ./dist && tsc -p ./tsconfig.json && tsc -p ./tsconfig.commonjs.json && yarn copyPackageJson",
+        "copyPackageJson": "node scripts/copyPackageJson.js",
         "test:coverage": "jest --coverage --colors --detectOpenHandles --forceExit",
         "test": "jest --colors --detectOpenHandles --runInBand --forceExit",
         "test:watch": "jest --coverage --colors --watchAll",
