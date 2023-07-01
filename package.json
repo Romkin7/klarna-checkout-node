@@ -18,7 +18,7 @@
         "lint": "yarn run prettier:test && eslint src/**/*.ts --ext .ts{x}",
         "prettier:test": "prettier --check \"src/**/*.ts*\"",
         "prettier:fix": "prettier --write \"src/**/*.ts*\"",
-        "publish": "npm publish --access public"
+        "publish": "(cd dist&& npm publish --access public)"
     },
     "author": {
         "email": "devdesignrt@devdesign.fi",
