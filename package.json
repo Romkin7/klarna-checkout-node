@@ -10,7 +10,7 @@
     },
     "scripts": {
         "start": "tsc --watch",
-        "build": "rimraf ./dist && tsc -p ./tsconfig.json && tsc -p ./tsconfig.commonjs.json && yarn copyPackageJson",
+        "build": "rimraf ./dist && tsc -p ./tsconfig.json && tsc -p ./tsconfig.commonjs.json && yarn copyPackageJson && cp README.md ./dist",
         "copyPackageJson": "node scripts/copyPackageJson.js",
         "test:coverage": "jest --coverage --colors --detectOpenHandles --forceExit",
         "test": "jest --colors --detectOpenHandles --runInBand --forceExit",
