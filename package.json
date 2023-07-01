@@ -21,7 +21,7 @@
         "publish": "npm publish --access public"
     },
     "author": {
-        "email": "devdesignrt@gmail.com",
+        "email": "devdesignrt@devdesign.fi",
         "name": "DevDesing",
         "url": "https://www.devdesign.fi"
     },
